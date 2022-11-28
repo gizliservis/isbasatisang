@@ -1,0 +1,33 @@
+export interface Stok{
+    Id:number;
+    Durumu:boolean;
+    StokKodu:string;
+    StokAdi:string;
+    Barkod:string;
+    BarkodTuru:string;
+    Birimi:string;
+    StokGrubu:string;
+    StokAltGrubu:string;
+    Marka:string;
+    Modeli:string;
+    OzelKod1:string;
+    OzelKod2:string;
+    OzelKod3:string; 
+    OzelKod4:string ;
+    GarantiSuresi:string; 
+    UreticiKodu:string; 
+    AlisKdv :number;
+    SatisKdv:number; 
+    AlisFiyati1:number; 
+    AlisFiyati2:number; 
+    AlisFiyati3:number; 
+    SatisFiyati1:number;
+    SatisFiyati2:number;
+    SatisFiyati3:number;
+    MinStokMiktari :number;
+    MaxStokMiktari :number;
+    Aciklama :string;
+    StokGiris:number;
+    StokCikis:number;
+    MevcutStokBakiyesi:number;
+}
