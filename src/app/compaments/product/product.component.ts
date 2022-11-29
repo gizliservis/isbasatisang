@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Stok } from 'src/app/models/product';
-
-import { ProductResponseModel } from 'src/app/models/productResponseModel';
 import { VirtualTimeScheduler } from 'rxjs';
 import { ProductService } from 'src/app/services/product.service';
 
