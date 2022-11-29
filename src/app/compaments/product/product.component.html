@@ -1,13 +1,26 @@
 <table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>StokAdi</th>
+            <th>StokKodu</th>
+            <th>StokGrubu</th>
+            <th>StokAltGrubu</th>
+            <th>Barkod</th>
+            <th>BarkodTuru</th>
+            <th>Birimi</th>
+            <th>SatisFiyati1</th>
+            <th>SatisFiyati2</th>
+            <th>SatisFiyati3</th>
+
+        </tr>
+    </thead>
     <tr *ngFor="let product of products">
         <td> {{product.StokAdi}} </td>
         <td> {{product.StokKodu}} </td>
         <td> {{product.StokGrubu}} </td>
         <td> {{product.StokAltGrubu}} </td>
-        <td> {{product.SatisFiyati1}} </td>
         <td> {{product.Barkod}} </td>
         <td> {{product.BarkodTuru}} </td>
-        <td> {{product.Durumu}} </td>
         <td> {{product.Birimi}} </td>
         <td> {{product.SatisFiyati1}} </td>
         <td> {{product.SatisFiyati2}} </td>
