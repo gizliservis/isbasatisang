@@ -10,6 +10,7 @@ import { Category } from 'src/app/models/category';
 })
 export class CategoryComponent implements OnInit {
   categories:Category[]=[];
+  currentCategory:Category;
   dataLoaded=false;
   constructor(private categoryService:CategoryService){}
   ngOnInit(): void {
@@ -20,6 +21,16 @@ export class CategoryComponent implements OnInit {
       this.categories=response,
       this.dataLoaded=true})
       
+  }
+  setCurrentCategory(category:Category){
+this.currentCategory=category;
+  }
+  getCurrentCategoryClass(category:Category){
+    if(category==this.currentCategory){
+      return "list-group-item active"
+    }else{
+      return "list-group-item"
+    }
   }
 
 }
