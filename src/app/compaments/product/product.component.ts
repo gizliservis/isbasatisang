@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Stok } from 'src/app/models/product';
-import{HttpClient} from '@angular/common/http';
+
 import { ProductResponseModel } from 'src/app/models/productResponseModel';
 import { VirtualTimeScheduler } from 'rxjs';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-product',
@@ -11,17 +12,16 @@ import { VirtualTimeScheduler } from 'rxjs';
 })
 export class ProductComponent implements OnInit {
   products:Stok[]=[];
-  apiUrl="http://localhost/isbasatis.WebApi/api/Data/StokListele";
-  constructor(private httpClient:HttpClient){}
+  dataLoaded=false;
+  constructor(private productService:ProductService){}
   ngOnInit(): void {
     this.getProducts();
   }
   getProducts(){
-this.httpClient
-    .get<Stok[]>(this.apiUrl)
-    .subscribe((response)=>{
-      this.products=response
-});
+    this.productService.getProducts().subscribe(response=>{
+      this.products=response,
+      this.dataLoaded=true})
+      
   }
 
 }
