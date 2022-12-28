@@ -10,7 +10,6 @@ import { ProductComponent } from './compaments/product/product.component';
 import { CategoryComponent } from './compaments/category/category.component';
 import { NaviComponent } from './compaments/navi/navi.component';
 import { StudentComponent } from './compaments/student/student.component';
-import{ StudentEkleComponent} from './compaments/student-ekle/student-ekle.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { FilterPipePipe } from './pipes/filter-pipe.pipe';
 
@@ -21,7 +20,6 @@ import { FilterPipePipe } from './pipes/filter-pipe.pipe';
     CategoryComponent,
     NaviComponent,
     StudentComponent,
-    StudentEkleComponent,
     FilterPipePipe
   ],
   imports: [
