@@ -3,13 +3,18 @@ import{HttpClient} from '@angular/common/http';
 import { Stok } from '../models/product';
 import { Observable } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
+// @Injectable({
+//   providedIn: 'root'
+// })
 export class ProductService {
-  apiUrl="http://localhost/isbasatis.WebApi/api/Data/StokListele";
+  apiUrl="http://localhost/isbasatis.WebApi/api/Data/";
   constructor(private httpClient:HttpClient) { }
   getProducts():Observable<Stok[]>{
-   return this.httpClient.get<Stok[]>(this.apiUrl);
+    let newPath=this.apiUrl+"StokListele"
+   return this.httpClient.get<Stok[]>(newPath);
    }
+   getProductsByCategory(kategoriadi:string):Observable<Stok[]>{
+    let newPath=this.apiUrl+"StokListeleId?kategoriadi="+kategoriadi
+    return this.httpClient.get<Stok[]>(newPath);
+    }
 }

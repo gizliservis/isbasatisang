@@ -1,0 +1,93 @@
+<div *ngIf="dataLoaded==false" class="spinner-border text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+</div>
+<div class="mb-3">
+    <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="Ad Soyad Giriniz..">
+  </div>
+  <div *ngIf="filterText" class="alert alert-primary">
+    {{filterText}} aradınız
+  </div>
+<div class="row">
+
+
+    <div class="col">
+        <table *ngIf="dataLoaded==true" class="table table-spinner border">
+            <thead>
+                <tr>
+                    <th>AdiSoyadi</th>
+                    <th>Bolumu</th>
+                    <th>Hobileri</th>
+                    <th>SinifOgretmeni</th>
+                    <th>RehberOgretmeni</th>
+                    <th></th>
+
+                </tr>
+            </thead>
+            <tr *ngFor="let student of students | filterPipe:filterText">
+                <td> {{student.AdiSoyadi}} </td>
+                <td> {{student.Bolumu}} </td>
+                <td> {{student.Hobileri}} </td>
+                <td> {{student.SinifOgretmeni}} </td>
+                <td> {{student.RehberOgretmeni}} </td>
+                <td> <a class="btn btn-outline-danger text-black" (click)="deleteStudent(student)">Sil</a> </td>
+
+
+            </tr>
+        </table>
+    </div>
+    <div class="col-4">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="title">Öğrenci Ekle</h5>
+            </div>
+            <div class="card-body">
+                <form [formGroup]="studentAddForm">
+                    <div class="form-group">
+                        <div class="row">
+                            <label for="AdiSoyadi">Adı Soyadı</label>
+                            <input type="text" id="AdiSoyadi" formControlName="AdiSoyadi" placeholder="Adı Soyadı" />
+                        </div>
+                        <br />
+                        <div class="row">
+                            <label for="Bolumu">Bolümü</label>
+                            <input type="text" id="Bolumu" formControlName="Bolumu" placeholder="Bolümü" />
+                        </div>
+                        <br />
+                        <div class="row">
+                            <label for="Hobileri">Hobiler</label>
+                            <input type="text" id="Hobileri" formControlName="Hobileri" placeholder="Hobiler" />
+                        </div>
+                        <br />
+                        <div class="row">
+                            <label for="SinifOgretmeni">Sınıf Ögretmeni</label>
+                            <input type="text" id="SinifOgretmeni" formControlName="SinifOgretmeni"
+                                placeholder="Sınıf Ögretmeni" />
+                        </div>
+                        <br />
+                        <div class="row">
+                            <label for="RehberOgretmeni">Rehber Ogretmeni</label>
+                            <input type="text" id="RehberOgretmeni" formControlName="RehberOgretmeni"
+                                placeholder="Rehber Ogretmeni" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="div card-footer">
+                <button class="btn btn-fill btn-primary" (click)="add()">
+                    Ekle
+                </button>
+            </div>
+        </div>
+
+    </div>
+    <!-- <div class="col-6">
+        <div class="container">
+           
+        </div>
+
+    </div> -->
+
+
+
+
+</div>
