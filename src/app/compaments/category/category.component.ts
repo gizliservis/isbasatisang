@@ -32,5 +32,7 @@ this.currentCategory=category;
       return "list-group-item"
     }
   }
+  
+  
 
 }

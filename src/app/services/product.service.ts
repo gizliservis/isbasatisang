@@ -3,9 +3,9 @@ import{HttpClient} from '@angular/common/http';
 import { Stok } from '../models/product';
 import { Observable } from 'rxjs';
 
-// @Injectable({
-//   providedIn: 'root'
-// })
+@Injectable({
+  providedIn: 'root'
+})
 export class ProductService {
   apiUrl="http://localhost/isbasatis.WebApi/api/Data/";
   constructor(private httpClient:HttpClient) { }

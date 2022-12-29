@@ -1,7 +1,15 @@
 <div *ngIf="dataLoaded==false" class="spinner-border text-primary" role="status">
     <span class="visually-hidden">Loading...</span>
-  </div>
-<table *ngIf="dataLoaded==true" class="table table-bordered">
+</div>
+<div class="container">
+    <ag-grid-angular *ngIf="dataLoaded==true" class="ag-theme-alpine-dark" style="height: 600px;width:auto" [rowData]="products"
+    [columnDefs]="colDefs" [defaultColDef]="defaultColDef"   [rowSelection]="'multiple'"
+    [animateRows]="true"  [rowGroupPanelShow]="'always'"></ag-grid-angular>
+</div>
+
+
+
+<!-- <table *ngIf="dataLoaded==true" class="table table-bordered">
     <thead>
         <tr>
             <th>StokAdi</th>
@@ -25,4 +33,4 @@
 
 
     </tr>
-</table>
+</table> -->
